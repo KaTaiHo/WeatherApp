@@ -1,15 +1,19 @@
 #:kivy 1.10.0
 
-<CustBottn@Button>:
-    font_size: 32
+<CustButton@Button>:
+    font_size: 13
     color: 0, 0, 0, 1
-    size: 50, 50
+    background_normal: ''
+    background_down: 'bkgrd-down-color.png'
+    backgrorund_color: .76, .76, .76, 1
+    size_hint: .16, .08
 
 
 <FloatLayout>:
     Label:
         text: "Weather App"
         pos_hint: {"center_x": .5, "center_y": .9}
-    Button:
+        font_size: 32
+    CustButton:
         text: "Check Weather"
-        pos_hint: {"center_x": .5, "center_y": .8}
+        pos_hint: {"center_x": .5, "center_y": .7}
