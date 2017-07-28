@@ -1,2 +1,15 @@
-<Label>:
-	text: "Weather App"
+#:kivy 1.10.0
+
+<CustBottn@Button>:
+    font_size: 32
+    color: 0, 0, 0, 1
+    size: 50, 50
+
+
+<FloatLayout>:
+    Label:
+        text: "Weather App"
+        pos_hint: {"center_x": .5, "center_y": .9}
+    Button:
+        text: "Check Weather"
+        pos_hint: {"center_x": .5, "center_y": .8}
