@@ -15,20 +15,26 @@ class WeatherFloatLayout(FloatLayout):
 	
 	data = {}
 	current_description = StringProperty()
-	temp = 0.0
+	temp = StringProperty()
+	temp_hi = StringProperty()
+	temp_lo = StringProperty()
 
 	def __init__(self, **kwargs):
 		super(WeatherFloatLayout, self).__init__(**kwargs)
 		self.data = ''
+
+	def convert_to_fahrenheit(self, num):
+		return int((9/5) * (num - 273.0) + 35) 
 
 	def get_weather_data(self):
 		print ('data pressed')
 		api_key = '28d0ca9a9aff408aa4f90c51689be4ed'
 		r = requests.get('http://api.openweathermap.org/data/2.5/weather?zip=78751,us&appid=' + api_key)
 		self.data = json.loads(r.text)
-		self.current_description = self.data['weather'][0]['description']
-		self.temp = self.data['main']['temp']
-
+		self.current_description = self.data['weather'][0]['description'].title()
+		self.temp = 'Current Temperature: ' + str(self.convert_to_fahrenheit(self.data['main']['temp'])) + '\xb0F'
+		self.temp_hi = 'High Temperature: ' + str(self.convert_to_fahrenheit(self.data['main']['temp_max'])) + '\xb0F'
+		self.temp_lo = 'Low Temperature: ' + str(self.convert_to_fahrenheit(self.data['main']['temp_min'])) + '\xb0F'
 
 
 
