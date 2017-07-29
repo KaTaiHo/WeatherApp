@@ -1,12 +1,12 @@
 #:kivy 1.10.0
 
 <CustButton@Button>:
-    font_size: 13
+    font_size: 18
     color: 0, 0, 0, 1
     background_normal: ''
     background_down: 'img\light_grey.png'
     background_color: 1, 1, 1, 1
-    size_hint: .16, .08
+    size_hint: .3, .08
 
 <FloatLayout>:
     canvas.before:
@@ -31,3 +31,11 @@
         color: 0, 0, 0, 1
         text: ""
         pos_hint: {"center_x": .4, "center_y": .75}
+    Label:
+        font_size: 15
+        color: 0, 0, 0, 1
+        text: root.current_description
+        pos_hint: {"center_x": .4, "center_y": .75}
+
+
+
