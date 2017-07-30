@@ -18,6 +18,8 @@ class WeatherFloatLayout(FloatLayout):
 	temp = StringProperty()
 	temp_hi = StringProperty()
 	temp_lo = StringProperty()
+	wind = StringProperty()
+	humidity = StringProperty()
 
 	def __init__(self, **kwargs):
 		super(WeatherFloatLayout, self).__init__(**kwargs)
@@ -35,6 +37,11 @@ class WeatherFloatLayout(FloatLayout):
 		self.temp = 'Current Temperature: ' + str(self.convert_to_fahrenheit(self.data['main']['temp'])) + '\xb0F'
 		self.temp_hi = 'High Temperature: ' + str(self.convert_to_fahrenheit(self.data['main']['temp_max'])) + '\xb0F'
 		self.temp_lo = 'Low Temperature: ' + str(self.convert_to_fahrenheit(self.data['main']['temp_min'])) + '\xb0F'
+		self.wind = 'Wind: ' + str(self.data['wind']['speed']) + ' mph'
+		self.humidity = 'Humidity: ' + str(self.data['main']['humidity']) + '%'
+
+
+
 
 
 
