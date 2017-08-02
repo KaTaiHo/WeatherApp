@@ -11,6 +11,7 @@ from kivy.core.window import Window
 Window.size = (400, 700)
 
 
+
 class WeatherFloatLayout(FloatLayout):
 	
 	data = {}
@@ -21,6 +22,7 @@ class WeatherFloatLayout(FloatLayout):
 	wind = StringProperty()
 	humidity = StringProperty()
 	weather_bg_image = StringProperty()
+	recommendation = StringProperty()
 
 	def __init__(self, **kwargs):
 		super(WeatherFloatLayout, self).__init__(**kwargs)
@@ -40,12 +42,10 @@ class WeatherFloatLayout(FloatLayout):
 		self.temp_lo = 'Low Temperature: ' + str(self.convert_to_fahrenheit(self.data['main']['temp_min'])) + '\xb0F'
 		self.wind = 'Wind: ' + str(self.data['wind']['speed']) + ' mph'
 		self.humidity = 'Humidity: ' + str(self.data['main']['humidity']) + '%'
+		self.recommendation = self.analyze_data()
 
-
-
-
-
-
+	def analyze_data(self):
+		return ''
 
 
 class WeatherApp(App):
