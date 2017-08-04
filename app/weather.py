@@ -11,7 +11,6 @@ from kivy.core.window import Window
 Window.size = (400, 700)
 
 
-
 class WeatherFloatLayout(FloatLayout):
 	
 	data = {}
@@ -28,8 +27,10 @@ class WeatherFloatLayout(FloatLayout):
 		super(WeatherFloatLayout, self).__init__(**kwargs)
 		self.data = ''
 
+
 	def convert_to_fahrenheit(self, num):
 		return int((9/5) * (num - 273.0) + 35) 
+
 
 	def get_weather_data(self):
 		print ('data pressed')
@@ -44,8 +45,10 @@ class WeatherFloatLayout(FloatLayout):
 		self.humidity = 'Humidity: ' + str(self.data['main']['humidity']) + '%'
 		self.recommendation = self.analyze_data()
 
+
 	def analyze_data(self):
-		return ''
+		if self.temp > 95:
+			return 'HOT'
 
 
 class WeatherApp(App):
