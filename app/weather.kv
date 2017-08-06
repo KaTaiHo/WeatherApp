@@ -2,65 +2,55 @@
 
 <CustButton@Button>:
     font_size: 18
-    color: 0, 0, 0, 1
+    color: 1, 1, 1, 1
     background_normal: ''
     background_down: 'img\light_grey.png'
     background_color: 1, 1, 1, 1
     size_hint: .3, .08
 
 <FloatLayout>:
-    canvas.before:
-        Color:
-            rgba: 1, 1, 1, 1
-        Rectangle:
-            pos: self.pos
-            size: self.size 
     id: display
 
     Label:
         font_size: 32
-        color: 0, 0, 0, 1
         text: "Weather App"
         pos_hint: {"center_x": .5, "center_y": .9}
     CustButton:
         text: "Check Weather"
-        pos_hint: {"center_x": .5, "center_y": .7}
+        pos_hint: {"center_x": .5, "center_y": .8}
         on_press: display.get_weather_data()
     Label:
-        font_size: 15
-        color: 0, 0, 0, 1
+        font_size: 16
         text: ""
         pos_hint: {"center_x": .4, "center_y": .75}
     Label:
         font_size: 16
-        color: 0, 0, 0, 1
         text: root.current_description
+        pos_hint: {"center_x": .5, "center_y": .7}
+    Label:
+        font_size: 16
+        text: root.temp
+        pos_hint: {"center_x": .5, "center_y": .65}
+    Label:
+        font_size: 16
+        text: root.temp_hi
         pos_hint: {"center_x": .5, "center_y": .6}
     Label:
         font_size: 16
-        color: 0, 0, 0, 1
-        text: root.temp
+        text: root.temp_lo
         pos_hint: {"center_x": .5, "center_y": .55}
     Label:
         font_size: 16
-        color: 0, 0, 0, 1
-        text: root.temp_hi
-        pos_hint: {"center_x": .5, "center_y": .5}
-    Label:
-        font_size: 16
-        color: 0, 0, 0, 1
-        text: root.temp_lo
+        text: root.wind
         pos_hint: {"center_x": .5, "center_y": .45}
     Label:
         font_size: 16
-        color: 0, 0, 0, 1
-        text: root.wind
-        pos_hint: {"center_x": .5, "center_y": .35}
+        text: root.humidity
+        pos_hint: {"center_x": .5, "center_y": .4}
     Label:
         font_size: 16
-        color: 0, 0, 0, 1
-        text: root.humidity
-        pos_hint: {"center_x": .5, "center_y": .3}
+        text: root.recommendation
+        pos_hint: {"center_x": .5, "center_y": .35}
 
 
 

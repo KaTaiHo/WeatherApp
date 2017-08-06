@@ -23,6 +23,7 @@ class WeatherFloatLayout(FloatLayout):
 	wind = StringProperty()
 	humidity = StringProperty()
 	weather_bg_image = StringProperty()
+	recommendation = StringProperty()
 
 	
 	def __init__(self, **kwargs):
@@ -45,8 +46,17 @@ class WeatherFloatLayout(FloatLayout):
 		self.temp_lo = 'Low Temperature: ' + str(self.convert_to_fahrenheit(self.data['main']['temp_min'])) + '\xb0F'
 		self.wind = 'Wind: ' + str(self.data['wind']['speed']) + ' mph'
 		self.humidity = 'Humidity: ' + str(self.data['main']['humidity']) + '%'
+		self.recommendation = self.analyze_data()
 
 
+<<<<<<< HEAD
+=======
+	def analyze_data(self):
+		if self.temp > 95:
+			return 'HOT'
+
+
+>>>>>>> a45834df5b9c700a3bbf2071329c0a8edefd34d1
 class WeatherApp(App):
 
 	def build(self):
