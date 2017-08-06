@@ -49,14 +49,11 @@ class WeatherFloatLayout(FloatLayout):
 		self.recommendation = self.analyze_data()
 
 
-<<<<<<< HEAD
-=======
 	def analyze_data(self):
 		if self.temp > 95:
 			return 'HOT'
 
 
->>>>>>> a45834df5b9c700a3bbf2071329c0a8edefd34d1
 class WeatherApp(App):
 
 	def build(self):
