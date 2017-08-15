@@ -46,12 +46,13 @@ class WeatherFloatLayout(FloatLayout):
 		self.temp_lo = 'Low Temperature: ' + str(self.convert_to_fahrenheit(self.data['main']['temp_min'])) + '\xb0F'
 		self.wind = 'Wind: ' + str(self.data['wind']['speed']) + ' mph'
 		self.humidity = 'Humidity: ' + str(self.data['main']['humidity']) + '%'
-		self.recommendation = self.analyze_data()
+		# self.recommendation = self.analyze_data()
 
 
 	def analyze_data(self):
-		if self.temp > 95:
-			return 'HOT'
+		pass
+		# if self.temp > 95:
+		# 	return 'HOT'
 
 
 class WeatherApp(App):
